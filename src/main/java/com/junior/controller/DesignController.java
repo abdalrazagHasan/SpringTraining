@@ -29,9 +29,12 @@ public class DesignController {
 
         Ingredient.Type[] types = Ingredient.Type.values();
         for (Ingredient.Type type : types){
-            model.addAttribute(type.toString().toLowerCase(),ingredients.stream().filter((Ingredient s) -> s.getType().toString().
-                    toLowerCase().equals(type.toString().toLowerCase())).collect(Collectors.toList()));
+            model.addAttribute(type.toString().toLowerCase(), ingredients.stream().filter(s -> s.getType().toString()
+                    .equalsIgnoreCase(type.toString())).collect(Collectors.toList()));
         }
+
+
+
 
         return "designPage";
     }

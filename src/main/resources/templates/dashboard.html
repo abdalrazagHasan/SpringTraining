@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span {
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div th:each="employee : ${employees}">
+        <span th:text="${employee.id}"></span>
+        <span th:text="${employee.fullName}"></span>
+        <span th:text="${employee.username}"></span>
+    </div>
+</body>
+</html>
